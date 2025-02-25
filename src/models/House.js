@@ -6,6 +6,7 @@ const HouseSchema = new mongoose.Schema({
     description: { type: String, required: true },
     emblem: { type: String, required: true },
     emblemHover: { type: String, required: true },
+    emblemFrontPage: { type: String, required: true },
     frontPage: { type: String, required: true },
     colors: { type: [String], required: true }
 });
