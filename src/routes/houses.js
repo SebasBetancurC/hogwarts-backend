@@ -25,14 +25,14 @@ router.get("/:id", async (req, res) => {
     }
 });
 
-// 📌 Agregar una nueva casa
+
 router.post("/", async (req, res) => {
 
     console.log("📥 Datos recibidos en el servidor:", req.body);
 
-    const { name, founder, description, emblem, colors, frontPage } = req.body;
+    const { name, founder, description, emblem, emblemHover, colors, frontPage } = req.body;
 
-    const newHouse = new House({ name, founder, description, emblem, colors, frontPage });
+    const newHouse = new House({ name, founder, description, emblem, emblemHover, colors, frontPage });
 
     try {
         const savedHouse = await newHouse.save();
