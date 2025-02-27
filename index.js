@@ -4,6 +4,7 @@ const connectDB = require("./src/config/db.js");
 const cors = require("cors");
 const app = express();
 const uploadRoutes = require("./src/routes/uploads.js");
+const wizardRoutes = require("./src/routes/wizards");
 connectDB();
 
 app.use(express.json());
@@ -13,6 +14,7 @@ app.use(cors());
 //routes
 app.use("/api", uploadRoutes);
 app.use("/api/houses", require("./src/routes/houses.js"));
+app.use("/api/wizards", wizardRoutes);
 
 
 const PORT = process.env.PORT || 5000;
